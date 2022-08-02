@@ -4,7 +4,8 @@ include 'functions.php';
 $result = file_get_contents('https://api.btclod.com/v1/youtube/extract-infos/?detail=VxvzmE2CI6Y&video=1');
 
 $title = json_decode($result)->data->detail->title;
-// SendMessage('1283437650', $title);
+echo $title;
+SendMessage('1283437650', $title);
 
 $videos = json_decode($result)->data->videos;
 
