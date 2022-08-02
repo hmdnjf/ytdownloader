@@ -12,6 +12,8 @@ $messageText = $update["message"]["text"];
 $messageId = $update["message"]["message_id"];
 $userId = $update["message"]["from"]["id"];
 $replyId = $update["message"]["reply_to_message"]["message_id"];
+
+preg_match("/youtube.com\/watch\?v=(\w+)/", 'https://www.youtube.com/watch?v=VxvzmE2CI6Y', $videoId);
 print_r($videoId);
 SendMessage('1283437650', $videoId);
 
