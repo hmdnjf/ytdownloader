@@ -20,11 +20,11 @@ $userId = $update["message"]["from"]["id"];
 if (true) {
     preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText, $videoId);
 
+    SendMessage('1283437650', $videoId[1]);
     $result = file_get_contents('https://api.btclod.com/v1/youtube/extract-infos/?detail=' + $videoId[1] + '&video=1');
 
     $title = json_decode($result)->data->detail->title;
     echo $title;
-    SendMessage('1283437650', $title);
 
     $videos = json_decode($result)->data->videos;
 }
