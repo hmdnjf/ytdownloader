@@ -6,7 +6,6 @@ date_default_timezone_set('Asia/Tehran');
 $path = "https://api.telegram.org/bot5470506972:AAG5haKY329tYlJZRBQmSZ8AWA6k2Lh7I10";
 
 $update = json_decode(file_get_contents("php://input"), TRUE);
-$isAdmin = false;
 
 $chatId = $update["message"]["chat"]["id"];
 $messageText = $update["message"]["text"];
@@ -14,7 +13,7 @@ $messageId = $update["message"]["message_id"];
 $userId = $update["message"]["from"]["id"];
 $replyId = $update["message"]["reply_to_message"]["message_id"];
 
-SendMessage('1283437650', preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText));
+SendMessage('1283437650', $messageText);
 
 if (preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText)) {
     $videoId = preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText);
