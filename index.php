@@ -18,7 +18,7 @@ preg_match("/youtube.com\/watch\?v=(\w+)/", 'https://www.youtube.com/watch?v=Vxv
 SendMessage('1283437650', $videoId[1]);
 
 
-if (preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText)) {
+if (true) {
     preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText, $videoId);
 
     $result = file_get_contents('https://api.btclod.com/v1/youtube/extract-infos/?detail=' + $videoId[1] + '&video=1');
