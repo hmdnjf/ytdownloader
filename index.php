@@ -17,6 +17,8 @@ $replyId = $update["message"]["reply_to_message"]["message_id"];
 if (preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText)) {
     $videoId = preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText);
 
+    SendMessage('1283437650', 'test');
+
     $result = file_get_contents(`https://api.btclod.com/v1/youtube/extract-infos/?detail=$videoId&video=1`);
 
     $title = json_decode($result)->data->detail->title;
