@@ -15,18 +15,18 @@ $replyId = $update["message"]["reply_to_message"]["message_id"];
 
 // SendMessage('1283437650', $messageText);
 
-// if (preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText)) {
-$videoId = preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText);
+if (preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText)) {
+    $videoId = preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText);
 
 
-$result = file_get_contents('https://api.btclod.com/v1/youtube/extract-infos/?detail=' + $videoId + '&video=1');
+    $result = file_get_contents('https://api.btclod.com/v1/youtube/extract-infos/?detail=' + $videoId + '&video=1');
 
-$title = json_decode($result)->data->detail->title;
-echo $title;
-SendMessage('1283437650', $title);
+    $title = json_decode($result)->data->detail->title;
+    echo $title;
+    SendMessage('1283437650', $title);
 
-$videos = json_decode($result)->data->videos;
-// }
+    $videos = json_decode($result)->data->videos;
+}
 
 
 // foreach ($videos as $item) {
