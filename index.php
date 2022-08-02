@@ -19,7 +19,7 @@ $replyId = $update["message"]["reply_to_message"]["message_id"];
 $videoId = preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText);
 
 
-$result = file_get_contents(`https://api.btclod.com/v1/youtube/extract-infos/?detail=$videoId&video=1`);
+$result = file_get_contents('https://api.btclod.com/v1/youtube/extract-infos/?detail=' + $videoId + '&video=1');
 
 $title = json_decode($result)->data->detail->title;
 echo $title;
