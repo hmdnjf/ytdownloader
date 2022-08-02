@@ -6,5 +6,5 @@ $result = file_get_contents('https://api.btclod.com/v1/youtube/extract-infos/?de
 $videos = json_decode($result)->data->videos;
 
 foreach ($videos as $item) {
-    SendMessage('1283437650', $item->url);
+    SendMessage('1283437650', '$item->url');
 }
