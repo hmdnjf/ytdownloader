@@ -17,7 +17,7 @@ $userId = $update["message"]["from"]["id"];
 // SendMessage('1283437650', $videoId[1]);
 
 
-if (true) {
+if ($messageText) {
     preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText, $videoId);
 
     SendMessage('1283437650', $videoId[1]);
