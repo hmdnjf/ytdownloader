@@ -13,13 +13,12 @@ $messageId = $update["message"]["message_id"];
 $userId = $update["message"]["from"]["id"];
 $replyId = $update["message"]["reply_to_message"]["message_id"];
 
-echo preg_match("/youtube.com\/watch\?v=(\w+)/", 'https://www.youtube.com/watch?v=VxvzmE2CI6Y');
+// preg_match("/youtube.com\/watch\?v=(\w+)/", 'https://www.youtube.com/watch?v=VxvzmE2CI6Y', $videoId);
 // SendMessage('1283437650', $messageText);
 
 
 if (preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText)) {
-    $videoId = preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText);
-
+    preg_match("/youtube.com\/watch\?v=(\w+)/", $messageText, $videoId);
 
     $result = file_get_contents('https://api.btclod.com/v1/youtube/extract-infos/?detail=' + $videoId + '&video=1');
 
